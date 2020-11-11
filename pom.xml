@@ -34,9 +34,16 @@
         <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
         <gitflow-maven-plugin.version>1.15.0</gitflow-maven-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>
         <assertj-assertions-generator-maven-plugin>2.2.0</assertj-assertions-generator-maven-plugin>
         <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+
+        <!-- maven-jaxb2-plugin plugins -->
+        <jaxb-visitor.version>2.8</jaxb-visitor.version>
+        <cxf-xjc-javadoc.version>3.3.1</cxf-xjc-javadoc.version>
+        <jaxb-delegate-plugin.version>2.3.0</jaxb-delegate-plugin.version>
+        <jaxb2-basics-annotate.version>1.1.0</jaxb2-basics-annotate.version>
 
 
         <!-- Release Plugins -->
@@ -239,7 +246,6 @@
                         </execution>
                     </executions>
                 </plugin>
-
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
@@ -262,6 +268,51 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.jvnet.jaxb2.maven2</groupId>
+                    <artifactId>maven-jaxb2-plugin</artifactId>
+                    <version>${maven-jaxb2-plugin.version}</version>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                        <extension>true</extension>
+
+                        <plugins>
+                            <plugin>
+                                <groupId>org.jvnet.jaxb2_commons</groupId>
+                                <artifactId>jaxb2-basics</artifactId>
+                                <version>${jaxb2-basics.version}</version>
+                            </plugin>
+                            <plugin>
+                                <groupId>org.jvnet.jaxb2_commons</groupId>
+                                <artifactId>jaxb2-basics-annotate</artifactId>
+                                <version>${jaxb2-basics-annotate.version}</version>
+                            </plugin>
+                            <plugin>
+                                <groupId>org.apache.cxf.xjcplugins</groupId>
+                                <artifactId>cxf-xjc-javadoc</artifactId>
+                                <version>${cxf-xjc-javadoc.version}</version>
+                            </plugin>
+                            <plugin>
+                                <groupId>net.codesup.util</groupId>
+                                <artifactId>jaxb-delegate-plugin</artifactId>
+                                <version>${jaxb-delegate-plugin.version}</version>
+                            </plugin>
+                            <!-- using a locally patched version due to incorrect handling of IDREF(S)
+                                properties a pull request was published to offical version. If this is merged
+                                an released, the current version can be used. see: https://github.com/massfords/jaxb-visitor/pull/13 -->
+                            <plugin>
+                                <groupId>com.massfords</groupId>
+                                <artifactId>jaxb-visitor</artifactId>
+                                <version>${jaxb-visitor.version}</version>
+                            </plugin>
+                            <plugin>
+                                <groupId>com.foursoft.jaxb2</groupId>
+                                <artifactId>navigation-extender</artifactId>
+                                <version>${navigation-extender.version}</version>
+                            </plugin>
+                        </plugins>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
