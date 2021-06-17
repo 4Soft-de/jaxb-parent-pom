@@ -4,7 +4,7 @@
 
     <groupId>com.foursoft.jaxb2</groupId>
     <artifactId>jaxb-parent</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <packaging>pom</packaging>
     <name>jaxb-parent-pom</name>
     <description>Parent POM of all 4Soft JAXB / XML Modules</description>
@@ -19,23 +19,23 @@
 
         <!-- Dependencies -->
         <slf4j.version>1.7.30</slf4j.version>
-        <junit.jupiter.version>5.7.0</junit.jupiter.version>
+        <junit.jupiter.version>5.7.2</junit.jupiter.version>
         <jaxb2-basics.version>0.12.0</jaxb2-basics.version>
-        <assertj-core.version>3.18.1</assertj-core.version>
+        <assertj-core.version>3.20.1</assertj-core.version>
         <logback-classic.version>1.2.3</logback-classic.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <jaxb-core.version>2.3.0.1</jaxb-core.version>
         <jaxb.version>2.3.3</jaxb.version>
         <javax.annotation.version>1.3.2</javax.annotation.version>
-        <maven-core.version>3.6.3</maven-core.version>
+        <maven-core.version>3.8.1</maven-core.version>
 
         <!-- Plugins -->
         <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
         <maven-jaxb2-plugin.version>0.14.0</maven-jaxb2-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <license-maven-plugin.version>2.0.0</license-maven-plugin.version>
-        <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
-        <gitflow-maven-plugin.version>1.15.0</gitflow-maven-plugin.version>
+        <maven-javadoc-plugin.version>3.3.0</maven-javadoc-plugin.version>
+        <gitflow-maven-plugin.version>1.16.0</gitflow-maven-plugin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <assertj-assertions-generator-maven-plugin>2.2.0</assertj-assertions-generator-maven-plugin>
         <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
@@ -43,7 +43,7 @@
 
 
         <!-- Release Plugins -->
-        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
 
         <!-- build and release properties -->
@@ -346,18 +346,6 @@
                         <argLine>${test.argLine}</argLine>
                         <skipTests>${skipUTs}</skipTests>
                     </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.junit.jupiter</groupId>
-                            <artifactId>junit-jupiter-engine</artifactId>
-                            <version>${junit.jupiter.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.junit.platform</groupId>
-                            <artifactId>junit-platform-surefire-provider</artifactId>
-                            <version>1.3.2</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
