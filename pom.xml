@@ -18,7 +18,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <!-- Dependencies -->
-        <slf4j.version>1.7.35</slf4j.version>
+        <slf4j.version>1.7.36</slf4j.version>
         <junit.jupiter.version>5.8.2</junit.jupiter.version>
         <jaxb2-basics.version>0.12.0</jaxb2-basics.version>
         <assertj-core.version>3.20.2</assertj-core.version>
@@ -44,7 +44,7 @@
 
         <!-- Release Plugins -->
         <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
-        <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.10</nexus-staging-maven-plugin.version>
 
         <!-- build and release properties -->
         <sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
