@@ -279,6 +279,7 @@
                     <version>${license-maven-plugin.version}</version>
                     <configuration>
                         <verbose>false</verbose>
+                        <canUpdateDescription>true</canUpdateDescription>
                         <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
                         <processStartTag>========================LICENSE_START=================================
                         </processStartTag>
